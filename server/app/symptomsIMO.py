@@ -47,8 +47,3 @@ def parseLookup(input):
 			jsonRes = json.loads(res)
 			return jsonRes["Categories"][0]["Problems"][0]["Details"]["ICD10Title"]
 	return 0
-
-while(1):
-	str = raw_input()
-	res = parseLookup(rawInput)	
-	print(res)
