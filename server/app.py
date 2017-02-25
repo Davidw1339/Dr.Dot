@@ -1,4 +1,5 @@
 #!flask/bin/python
 from app import app
-print "we are running now"
+from flask import Flask, send_file
+
 app.run(debug=True)

@@ -18,5 +18,5 @@ from app import app
 #declare route
 @app.route("/")
 def hello():
-    print "we are sending over the file"
-    return send_file("../templates/index.html")
+    print "we are sending over the fracking file"
+    return send_file("templates/index.html")
