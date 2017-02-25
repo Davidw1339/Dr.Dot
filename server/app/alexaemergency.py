@@ -19,7 +19,7 @@ def send_msg():
     sent_msg = render_template('sent')
     return statement(sent_msg)
 
-#Say the phrase "Tell Emergency to Cancel" to cancel instead
+#Say the phrase "Cancel using emergency" to cancel instead
 @ask.intent("NoIntent")
 def no_request():
     canceled_msg = render_template('cancel')
