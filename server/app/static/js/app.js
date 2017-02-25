@@ -25,11 +25,11 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.loginview',
+  'myApp.registerview'
 ]).
 service('authentication', function() {
     this.user = {
-      name: "none",
-      type: "hacker"
+      name: "none"
     };
     this.getUser = function() {
       return this.user;
