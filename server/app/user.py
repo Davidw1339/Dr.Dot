@@ -15,11 +15,6 @@ if db_url == None:
 client = MongoClient(db_url)
 db = client.drdot
 
-#declare route
-@app.route("/")
-def hello():
-    return "Welcome to Dr. Dot an integrative suite of features for health and wellness!"
-
 @app.route("/register_user", methods=['POST'])
 def register_user():
     user_id = request.form['userid']

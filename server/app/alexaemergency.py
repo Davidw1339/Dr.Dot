@@ -2,6 +2,9 @@ from flask import Flask, request, render_template
 from flask_ask import Ask, statement, question, session
 from app import app
 import logging
+import twilioflask
+
+phone_num = "+14084258777"
 
 #setup flask app
 ask = Ask(app, "/")
@@ -16,6 +19,7 @@ def new_game():
 @ask.intent("YesIntent")
 def send_msg():
     #change data to
+    twilioflask.message_phone(phone_num, "lick my butt you iranian beauty")
     sent_msg = render_template('sent')
     return statement(sent_msg)
 

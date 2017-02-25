@@ -3,7 +3,7 @@ from twilio import TwilioRestException
 import json
 
 #Connect to twilio with Alex's keys
-phone_num = "+14084258777"
+
 with open('twilio_keys.json') as f:
     data = json.load(f)
 account_sid = data['twilio_sid']
