@@ -1,4 +1,6 @@
 from flask import Flask, request
+from twilio.rest import TwilioRestClient
+from twilio import TwilioRestException
 from pymongo import MongoClient
 import json
 import os
@@ -14,6 +16,14 @@ if db_url == None:
     print db_url
 client = MongoClient(db_url)
 db = client.drdot
+
+#Connect to twilio with Alex's keys
+with open('twilio_keys.json') as f:
+    data = json.load(f)
+account_sid = data['twilio_sid']
+auth_token = data['twilio_api_key']
+client = TwilioRestClient(account_sid, auth_token)
+
 
 #declare route
 @app.route("/")
@@ -60,6 +70,12 @@ def get_user():
     else:
         return "no user found"
     return json.dumps(user_json)
+
+def message_phone(contact,message):
+    try:
+        output = client.messages.create(to=contact, from_="+17087628282",body=message)
+    except TwilioRestException as e:
+        print(e)
 
 if __name__ == "__main__":
     app.run(debug=True)

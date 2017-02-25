@@ -1,2 +1,3 @@
 /server/secret_key.txt
 /server/venv
+/server/twilio_keys.json
