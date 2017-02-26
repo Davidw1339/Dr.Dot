@@ -3,8 +3,8 @@ body {
 }
 
 #grad {
-    background: linear-gradient(white, grey); /* Standard syntax */
-}
+    background: white;
+}/* Standard syntax */
 
 .sidenav {
     height: 100%;
@@ -20,6 +20,15 @@ body {
 }
 
 .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav #Sidebar_Title {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
