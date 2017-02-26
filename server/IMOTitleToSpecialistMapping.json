@@ -1,6 +1,7 @@
 {
 	"chest pain" : "Cardiologist",
 	"syncope" : "Cardiologist",
+	"fainting" : "Cardiologist",
 	"skin pain": "Dermatologist",
 	"tummy hurts": "Gastroenterologist",
 	"stomach ache": "Gastroenterologist",
