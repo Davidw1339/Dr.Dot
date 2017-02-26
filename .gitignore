@@ -3,3 +3,4 @@
 /server/twilio_keys.json
 /server/imoKeys.py
 /server/imoKeys.pyc
+*.pyc

@@ -8,7 +8,6 @@ import twilioflask
 import symptomsIMO as p
 import db_connection
 import user
-
 db = db_connection.get_connection()
 phone_num = "+14084258777"
 #setup flask app
@@ -104,7 +103,7 @@ def new_game():
 def send_msg():
     #change data to
     global emergency
-    twilioflask.message_phone(phone_num, "lick my butt you iranian beauty")
+    twilioflask.sendEmergencyText('Navid')
     emergency = True
     sent_msg = render_template('sent')
     return statement(sent_msg)
@@ -114,6 +113,7 @@ def send_msg():
 def no_request():
     global emergency
     canceled_msg = render_template('cancel')
+    twilioflask.endEmergencyText('Navid')
     #set database to cancel emergency
     emergency = False
     return statement(canceled_msg)
