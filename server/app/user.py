@@ -95,4 +95,13 @@ def put_doctor(username, doctor_name, doctor_address, doctor_phone):
 
 @app.route("/get_doctor", methods=['GET'])
 def get_doctor():
-    pass
+    username = request.args.get('username')
+    user = db.users.find_one({"username": username})
+    if user:
+        data = {
+            "doctor_name": user['doctor_name'],
+            "doctor_address": user['doctor_address'],
+            "doctor_phone": user['doctor_phone']
+        }
+        return json.dumps(data)
+    return ""

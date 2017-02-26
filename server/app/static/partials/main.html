@@ -17,14 +17,29 @@
     <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
     <p id="Sidebar_Title" style="font-size:20px">Features</p>
     <a href="#">Emergency Contact</a>
-    <a href="#">Dr. Finder</a>
+    <a ng-click="goDoctor()">Dr. Finder</a>
     <a href="#">Calendar Sync Help</a>
   </div>
 
 
   <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
-  <blockquote>
+  <blockquote id="mainview" style="display: none">
     <p>I am here to help you set up your sheeeeeeiiiiiiiit.</p>
     <small>Engineering Majors Everywhere <cite title="Source Title">Engineering Majors of the World</cite></small>
   </blockquote>
+
+  <blockquote id="doctorview" style="display: none; background-color: #E7E7E7;">
+    <h2>Recommended Doctor: <span id="doctorname"></span></h2>
+    <p>Phone number: <span id="phone"></span></p>
+    <p>Address: <span id="address"></span></p>
+    <br>
+    <iframe
+      id="google_map"
+      width="800"
+      height="400"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB-7S3jUfAxUgQQqbwGVkqWBD-Tv1WTRiw&q=Space+Needle,Seattle+WA" allowfullscreen>
+    </iframe>
+  </blockquote>
+
 </div>

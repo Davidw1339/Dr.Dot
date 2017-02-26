@@ -20,4 +20,9 @@ angular.module('myApp.mainview', ['ngRoute'])
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main").style.marginLeft= "0";
   }
+
+  $scope.goDoctor = function() {
+      console.log("heyo");
+      $location.path("/doctors");
+  }
 }]);

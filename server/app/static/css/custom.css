@@ -6,3 +6,9 @@
 .btn-stretch {
     width: 100%;
 }
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

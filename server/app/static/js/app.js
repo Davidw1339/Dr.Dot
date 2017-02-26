@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.loginview',
   'myApp.registerview',
-  'myApp.mainview'
+  'myApp.mainview',
+  'myApp.doctorview'
 ]).
 service('authentication', function() {
     this.user = {
