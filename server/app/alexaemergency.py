@@ -112,6 +112,7 @@ def no_request():
 
 @ask.intent("SympIntent")
 def symp_request():
+    global vac
     vac = True
     symp_msg = render_template('symptomes')
     return question(symp_msg)
@@ -119,6 +120,7 @@ def symp_request():
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
     print "THIS IS HAPPENING" , first
+    global vac
     if not vac:
         nov = render_template('notcomm')
         return statement(nov)

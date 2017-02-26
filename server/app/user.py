@@ -83,7 +83,7 @@ def load_doctor():
 
 def put_doctor(username, doctor_name, doctor_address, doctor_phone):
     if doctor_name:
-        db.people.update(
+        db.users.update(
            { "username": username },
            { '$set': {
                   "doctor_name": doctor_name,
