@@ -16,6 +16,7 @@ ask = Ask(app, "/")
 vac = False
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 emergency = False
+print 'testemergalexa'
 with open('IMOTitleToSpecialistMapping.json') as f:
     symptom_specialist_mapping = json.load(f)
 
@@ -74,7 +75,8 @@ def request_doctor(specialist_type):
     doctor_name.append(first_name)
     doctor_name.append(last_name)
     user.put_doctor("david", nam, address, phone)
-    stateName = render_template( 'nameStart', doctor_name = doctor_name, address = address ,phone = phone )
+    phoneList = [i for i in str(phone)]
+    stateName = render_template( 'nameStart', doctor_name = doctor_name, address = address ,phone = phoneList )
     #statement(stateName)
     if address and phone:
         return stateName

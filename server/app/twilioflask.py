@@ -10,15 +10,13 @@ with open('twilio_keys.json') as f:
 account_sid = data['twilio_sid']
 auth_token = data['twilio_api_key']
 client = TwilioRestClient(account_sid, auth_token)
-
 def message_phone(contact,message):
     try:
         output = client.messages.create(to=contact, from_="+17087628282",body=message)
-        print "we sent the txt boy"
+        #print "we sent the txt boy"
     except TwilioRestException as e:
         print(e)
 
-@app.route("/", methods=['GET', 'POST'])
 def sendEmergencyText(user):
     global emergency
     i = 0
