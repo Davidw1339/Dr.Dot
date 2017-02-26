@@ -87,12 +87,12 @@ def put_doctor(username, doctor_name, doctor_address, doctor_phone):
            { "username": username },
            { '$set': {
                   "doctor_name": doctor_name,
-                  "doctor_address": doctor_address
+                  "doctor_address": doctor_address,
                   "doctor_phone": doctor_phone
               }
            },
-           { upsert: true }
-        )
+           upsert=True)
 
 @app.route("/get_doctor", methods=['GET'])
 def get_doctor():
+    pass
