@@ -12,6 +12,44 @@ mainStr = ''
 ask = Ask(app, "/")
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
+with open('IMOTitleToSpecialistMapping.json') as f:
+    symptom_specialist_mapping = json.load(f)
+
+def request_doctor(specialist_type):
+    sess = requests.Session()
+    
+    url = 'https://api.betterdoctor.com/2016-03-01/doctors?'
+    location = 'location=40.120%2C-88.272%2C100' # hard coded to Champaign IL... TODO: use server 
+    user_location = 'user_location=40.120%2C-88.272'
+    skip = 'skip=0'
+    limit = 'limit=10'
+    
+    specialty_uid = 'specialty_uid=' + specialist_type
+    insurance_uid = 'insurance_uid=medicaid-medicaid'
+
+    sort = 'sort=distance-asc'
+    user_key = 'user_key=9a652b68e9692e8b69892feb57e2a250'
+
+    made_url = url + location + '&' + user_location + '&' + skip + '&' + limit + '&' + specialty_uid + '&' + insurance_uid + '&' + sort + '&' + user_key
+
+    html = sess.get(made_url)
+
+    json_data = json.loads(html.content.decode('utf-8'))
+
+    doctor_data = []
+    practice_data = []
+
+    for data in json_data["data"]:
+        doctor_data.append(data['profile'])
+        practice_data.append('practices')
+    
+    return doctor_data
+
+def find_specialist_with_symptom(symptom):
+    if symptom in symptom_specialist_mapping:
+        return symptom_specialist_mapping[symptom]
+    return ''
+
 @ask.launch
 def new_game():
     confirm_msg = render_template('confirm')
