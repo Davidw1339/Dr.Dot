@@ -1,4 +1,4 @@
-#Dr.Dot
+#Dr. Dot
 
 Dr. Dot is an open-source suite of tools and commands on the Amazon Echo to allow people to get matched to the medical services they need as soon as possible. Through different commands to Amazon Alexa, we wish to be able to help people of all ages and occupations, whether it be children, adults, or the elderly, find and contact the correct medical services for their specific situations.
 
@@ -17,12 +17,13 @@ Some features in place currently are:
 ## BUILD/INSTALLATION INSTRUCTIONS
   * General
     * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
-    * pip install -r requirements.txt
-    * Setup ngrok for local testing
-  * Windows
-    * ....
-  * Linux / Other
-    * ....
+    ```
+    pip install -r requirements.txt
+    cd path/to/Dr.Dot/server 
+    python app.py
+    cd path/to/ngrok/
+    ngrok http 5000
+    ```
 
 ## [INTERFACES]
 We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to query APIs with symptoms or ask for medical assistance.
@@ -33,8 +34,8 @@ In addition, we also use a small web app that gets data from our BetterDoctor qu
    * https://developer.betterdoctor.com/documentation15#/
    * https://developers.google.com/maps/
 
-## Contributor Guide
+## CONTRIBUTOR GUIDE
 [LINK TO CONTRIBUTING.md]
 
-## License 
-Dr.Dot uses the GPL 3.0 license.
+## LICENSE
+Dr. Dot uses the GPL 3.0 license.
