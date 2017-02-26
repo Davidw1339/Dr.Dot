@@ -3,7 +3,7 @@ from flask_ask import Ask, statement, question, session
 from app import app
 import logging
 import twilioflask
-import symptomsIMO
+import symptomsIMO as p
 
 phone_num = "+14084258777"
 lpcount = 0
@@ -38,15 +38,14 @@ def symp_request():
 
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
+    print "THIS IS HAPPENING" , first
     if(first == ''):
-        nof = render_template(nofound)
+        nof = render_template('nofound')
         return statement(nof)
-    mainStr = parseLookup(first)
+    mainStr = p.parseLookup(first)
     if(mainStr==0):
-        nom = render_template(nomatch)
+        nom = render_template('nomatch')
         return statement(nom)
     #insert code to find and get specialist here
-    sv = render_template(saved)
+    sv = render_template('saved')
     return statement(sv)
-
-

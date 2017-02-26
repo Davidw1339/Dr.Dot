@@ -12,69 +12,70 @@ def powerset(iterable):
 #lookup the symptom in IMO
 def lookup(symptRaw):
 	sympt = json.dumps({"Problems": [{"FreeText":symptRaw}]})
-	
+
 	headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
 	auth = imoKeys.auth
 	r = requests.post("https://ipl-nonproduction-customer_validation.e-imo.com/api/v3/actions/categorize",
 	auth = auth,
 	headers = headers,
 	data = sympt)
-	
+
 	return r.text
 
 #checks if IMO returned a categorized symptom
-def checkFound(res):
-		jsonRes = json.loads(res)
-		
+def checkFound(jsonRes):
 		if(jsonRes["Categories"][0]["Name"] == "Uncategorized"):
 			return 0
 		return 1
-	
-#try to find a sympton in a string	
+
+#try to find a sympton in a string
 def parseLookup(input):
-	data = json.loads(lookup(input))
-	return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+	ls = input.split(" ")
 
-	# ls = input.split(" ")
+	for i in ls:
+		if(len(i) <= 2):
+	 		ls.remove(i)
 	
-	# for i in ls:
-	# 	if(len(i) <= 2):
-	# 		ls.remove(i)
+	if(len(ls) >= 6):
+		lu = lookup(input)
+		data = json.loads(lu)
+		if(checkFound(data) == 0):
+			return 0
+		return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 
-	# sets = list(powerset(ls))
-	
-	# for i in sets:
-	# 	res = lookup(" ".join(i))
-	# 	if(checkFound(res)):
-	# 		jsonRes = json.loads(res)
-	# 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["CategoryTitle"]
-	# return 0
+	sets = list(powerset(ls))
 
-print(parseLookup('I am feeling sad'))
-print(parseLookup('chest pain'))
-print(parseLookup('skin pain'))
-print(parseLookup('tummy hurts'))
-print(parseLookup('stomach ache'))
-print(parseLookup('leg broken'))
-print(parseLookup('bullet wound'))
-print(parseLookup('cold'))
-print(parseLookup('flu'))
-print(parseLookup('back pain'))
-print(parseLookup('earache'))
-print(parseLookup('headache'))
-print(parseLookup('chronic pelvic pain'))
-print(parseLookup('toothache'))
-print(parseLookup('vaginal pain'))
-print(parseLookup('rectal pain'))
-print(parseLookup('dermatomal pain'))
-print(parseLookup('chills'))
-print(parseLookup('fever'))
-print(parseLookup('light-headed'))
-print(parseLookup('dizzy'))
-print(parseLookup('dry mouth'))
-print(parseLookup('nauseated'))
-print(parseLookup('short of breath'))
-print(parseLookup('chronic drowsiness'))
-print(parseLookup('dry mouth'))
-print(parseLookup('I am feeling depressed'))
+	for i in sets:
+	 	res = lookup(" ".join(i))
+	 	jsonRes = json.loads(res)
+		if(checkFound(jsonRes)):
+	 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+	return 0
 
+# print(parseLookup('I am feeling sad'))
+# print(parseLookup('chest pain'))
+# print(parseLookup('skin pain'))
+# print(parseLookup('tummy hurts'))
+# print(parseLookup('stomach ache'))
+# print(parseLookup('leg broken'))
+# print(parseLookup('bullet wound'))
+# print(parseLookup('cold'))
+# print(parseLookup('flu'))
+# print(parseLookup('back pain'))
+# print(parseLookup('earache'))
+# print(parseLookup('headache'))
+# print(parseLookup('chronic pelvic pain'))
+# print(parseLookup('toothache'))
+# print(parseLookup('vaginal pain'))
+# print(parseLookup('rectal pain'))
+# print(parseLookup('dermatomal pain'))
+# print(parseLookup('chills'))
+# print(parseLookup('fever'))
+# print(parseLookup('light-headed'))
+# print(parseLookup('dizzy'))
+# print(parseLookup('dry mouth'))
+# print(parseLookup('nauseated'))
+# print(parseLookup('short of breath'))
+# print(parseLookup('chronic drowsiness'))
+# print(parseLookup('dry mouth'))
+# print(parseLookup('I am feeling depressed'))
