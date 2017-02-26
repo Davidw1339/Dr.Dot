@@ -119,7 +119,7 @@ def symp_request():
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
     print "THIS IS HAPPENING" , first
-    if(~vac):
+    if not vac:
         nov = render_template('notcomm')
         return statement(nov)
     vac = False
