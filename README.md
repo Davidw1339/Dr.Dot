@@ -15,16 +15,15 @@ Some features in place currently are:
            Alexa: "Please state your primary symptoms."
   
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * General
-    * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
+   Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
+   
     
-    ```
     pip install -r requirements.txt
     cd path/to/Dr.Dot/server 
     python app.py
     cd path/to/ngrok/
     ngrok http 5000
-    ```
+    
 
 ## [INTERFACES]
 We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to query APIs with symptoms or ask for medical assistance.
