@@ -42,21 +42,17 @@
     </iframe>
   </blockquote>
   <div id="profileview" style="display: none">
-
-    <div class="col-sm-4">
-      <img src="../images/githubStockPic.png">
+    <div class="container col-sm-2" style="display:block;">
+      <img src="..\..\static\images\githubStockPic1.png" class="img-circle" style="width:75%; height:75%;"><!--Stupid image won't ouput-->
     </div>
-    <div class="well well-lg col-sm-8">NAME!!<br>username!!</div>
+    <div class="well well-lg col-sm-10"><h2>NAME!!</h2><br>username!!</div>
 
     <form class="form-horizontal">
       <div class="form-group">
-        <input type="text" class="form-control" id="inputName" placeholder="Name"/><!--no-->
+        <input type="password" class="form-control" id="inputPassword" placeholder="New Password"/><!--"New Password"-->
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="inputUser" placeholder="Username"/><!--no-->
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password"/><!--"New Password"-->
+        <input type="password" class="form-control" id="inputPassword" placeholder="Confirm new Password"/><!--"New Password"-->
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="inputAddress" placeholder="Address"/><!--Prepopulate!-->
@@ -67,6 +63,11 @@
       <div class="form-group">
         <input type="text" class="form-control" id="inputPhone2" placeholder="Emergency Phone Contact"/><!--Prepopulate!-->
       </div>
+    </form>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg">Save Edits</button>
+      </div>
+    </div>
   </div>
 
 </div>
