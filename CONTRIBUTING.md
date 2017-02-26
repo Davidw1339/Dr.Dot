@@ -11,9 +11,6 @@ We believe this accurately represents how we want contributors to add to the cod
 * bugs: issue tracker / bug report tool
 * communcations: email
 
-## Testing
-## Development environment details
-
 ## How to submit changes: Pull Request protocol etc. 
 refer to above guide
 
