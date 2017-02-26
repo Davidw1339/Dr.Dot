@@ -38,6 +38,7 @@
 	"hair loss": "dermatologist",
 	"gunshot wound": "surgery-trauma-surgery",
 	"gunshot injury": "surgery-trauma-surgery",
+	"bleeding": "surgery-trauma-surgery",
 	"irradiation": "radiation-oncologist",
-	"irradiated enamel": "radiation-oncologist",
+	"irradiated enamel": "radiation-oncologist"
 }
