@@ -17,8 +17,10 @@ Some features in place currently are:
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Windows
     * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
+    * pip install -r requirements.txt
   * Linux / Other
     * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
+    * pip install -r requirements.txt
 
 ## [INTERFACES]
 We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to query APIs with symptoms or ask for medical assistance.
