@@ -62,3 +62,37 @@ def get_user():
     else:
         return "no user found"
     return json.dumps(user_json)
+
+@app.route("/load_doctor", methods=['POST'])
+def load_doctor():
+    username = request.form.get('username')
+    doctor_name = request.form.get('doctor_name')
+    doctor_address = request.form.get('doctor_address')
+    doctor_phone = request.form.get('doctor_phone')
+    put_doctor(username, doctor_name, doctor_address, doctor_phone)
+    # if doctor_name:
+    #     db.people.update(
+    #        { "username": username },
+    #        { '$set': {
+    #               "doctor_name": doctor_name,
+    #               "doctor_address": doctor_address
+    #           }
+    #        },
+    #        { upsert: true }
+    #     )
+
+def put_doctor(username, doctor_name, doctor_address, doctor_phone):
+    if doctor_name:
+        db.people.update(
+           { "username": username },
+           { '$set': {
+                  "doctor_name": doctor_name,
+                  "doctor_address": doctor_address
+                  "doctor_phone": doctor_phone
+              }
+           },
+           { upsert: true }
+        )
+
+@app.route("/get_doctor", methods=['GET'])
+def get_doctor():
