@@ -10,6 +10,7 @@ We believe this accurately represents how we want contributors to add to the cod
 * Flask-ask documentation https://flask-ask.readthedocs.io/en/latest/
 * bugs: issue tracker / bug report tool
 * communcations: email
+
 ## Testing
 ## Development environment details
 
