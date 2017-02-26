@@ -30,6 +30,7 @@ refer to the above guide
 ## Style Guide / Coding conventions 
 
 ## Code of Conduct
+This project adheres to the Contributor Covenant [code of conduct](http://contributor-covenant.org/).
 
 ## Recognition model
 refer to the above guide
