@@ -15,7 +15,7 @@ phone_num = "+14084258777"
 ask = Ask(app, "/")
 vac = False
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
-
+emergency = False
 with open('IMOTitleToSpecialistMapping.json') as f:
     symptom_specialist_mapping = json.load(f)
 
@@ -69,14 +69,16 @@ def request_doctor(specialist_type):
 
     first_name = first_doctor['first_name']
     last_name = first_doctor['last_name']
-
-    doctor_name = first_name + ' ' + last_name
-
-    user.put_doctor("david", doctor_name, address, phone)
-
+    nam = first_name + ' ' + last_name
+    doctor_name = []
+    doctor_name.append(first_name)
+    doctor_name.append(last_name)
+    user.put_doctor("david", nam, address, phone)
+    stateName = render_template( 'nameStart', doctor_name = doctor_name, address = address ,phone = phone )
+    #statement(stateName)
     if address and phone:
-        return True
-    return False
+        return stateName
+    return None
 
 
 def find_specialist_with_symptom(symptom):
@@ -99,15 +101,19 @@ def new_game():
 @ask.intent("YesIntent")
 def send_msg():
     #change data to
+    global emergency
     twilioflask.message_phone(phone_num, "lick my butt you iranian beauty")
+    emergency = True
     sent_msg = render_template('sent')
     return statement(sent_msg)
 
 #Say the phrase "Cancel using emergency" to cancel instead
 @ask.intent("NoIntent")
 def no_request():
+    global emergency
     canceled_msg = render_template('cancel')
     #set database to cancel emergency
+    emergency = False
     return statement(canceled_msg)
 
 @ask.intent("SympIntent")
@@ -132,17 +138,13 @@ def symp_list(first):
     if(mainStr==0):
         nom = render_template('nomatch')
         return statement(nom)
-    #insert code to find and get specialist here
-
-    print 'GONNA LOOK FOR THE SPECIALIST NOW!!!'
-
     print(mainStr)
-    hasFoundSpecialist = find_specialist_with_symptom(mainStr)
+    specialistStatement = find_specialist_with_symptom(mainStr)
     #print("json")
     #print(data)
-
-    if hasFoundSpecialist:
-        sv = render_template('saved')
+    if specialistStatement:
+        # sv = render_template('saved')
+        sv = specialistStatement
     else:
         sv = render_template('nomatch')
     return statement(sv)
