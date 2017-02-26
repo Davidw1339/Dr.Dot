@@ -50,11 +50,11 @@ def login_user():
 
 @app.route("/get_user", methods=['GET'])
 def get_user():
-    userid = request.args.get('userid')
-    user = db.users.find_one({"userid": userid})
+    username = request.args.get('username')
+    user = db.users.find_one({"username": username})
     if user:
         user_json = {
-            "userid": userid,
+            "username": username,
             "address": user["address"],
             "assistantphone": user["assistantphone"],
             "emergencyphone": user["emergencyphone"]

@@ -16,16 +16,17 @@
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
     <p id="Sidebar_Title" style="font-size:20px">Features</p>
-    <a href="#">Emergency Contact</a>
+    <a ng-click="goProfile()">Profile</a>
     <a ng-click="goDoctor()">Dr. Finder</a>
-    <a href="#">Calendar Sync Help</a>
   </div>
 
 
   <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
   <blockquote id="mainview" style="display: none">
-    <p>I am here to help you set up your sheeeeeeiiiiiiiit.</p>
-    <small>Engineering Majors Everywhere <cite title="Source Title">Engineering Majors of the World</cite></small>
+    <h2>Welcome <span id="username"></span>,</h2>
+    <p>Expand the navigation drawer to view/edit your profile and also explore your
+    doctor recommendations from your Amazon Alexa
+    </p>
   </blockquote>
 
   <blockquote id="doctorview" style="display: none; background-color: #E7E7E7;">
@@ -45,27 +46,28 @@
     <div class="container col-sm-2" style="display:block;">
       <img src="..\..\static\images\githubStockPic1.png" class="img-circle" style="width:75%; height:75%;"><!--Stupid image won't ouput-->
     </div>
-    <div class="well well-lg col-sm-10"><h2>NAME!!</h2><br>username!!</div>
-
-    <form class="form-horizontal">
-      <div class="form-group">
-        <input type="password" class="form-control" id="inputPassword" placeholder="New Password"/><!--"New Password"-->
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Confirm new Password"/><!--"New Password"-->
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="inputAddress" placeholder="Address"/><!--Prepopulate!-->
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="inputPhone1" placeholder="Assistant Phone Contact"/><!--Prepopulate!-->
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="inputPhone2" placeholder="Emergency Phone Contact"/><!--Prepopulate!-->
-      </div>
-    </form>
+    <div class="well well-lg col-sm-10"><h2 id="usernameHeading"></h2><br></div>
+    <div class="profile-group">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <input type="password" class="form-control" id="inputPassword1" placeholder="New Password"/><!--"New Password"-->
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm new Password"/><!--"New Password"-->
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Address"/><!--Prepopulate!-->
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputPhone1" placeholder="Assistant Phone Contact"/><!--Prepopulate!-->
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputPhone2" placeholder="Emergency Phone Contact"/><!--Prepopulate!-->
+          </div>
+        </form>
+    </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg">Save Edits</button>
+        <button type="button" class="btn btn-primary btn-lg" ng-click="goMain()">Save Edits</button>
       </div>
     </div>
   </div>

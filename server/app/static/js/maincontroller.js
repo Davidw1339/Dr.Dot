@@ -11,6 +11,8 @@ angular.module('myApp.mainview', ['ngRoute'])
 
 .controller('MainController', ['$scope', '$location', '$route', '$http', 'authentication', function($scope, $location, $route, $http, authentication) {
   console.log("We have it");
+  $("#mainview").show();
+  $("#username").html(authentication.getUser().name);
   $scope.openNav = function() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
@@ -24,5 +26,9 @@ angular.module('myApp.mainview', ['ngRoute'])
   $scope.goDoctor = function() {
       console.log("heyo");
       $location.path("/doctors");
+  }
+
+  $scope.goProfile = function() {
+      $location.path("/profile");
   }
 }]);

@@ -21,6 +21,15 @@ angular.module('myApp.doctorview', ['ngRoute'])
       document.getElementById("main").style.marginLeft= "0";
   }
 
+  $scope.goDoctor = function() {
+      console.log("heyo");
+      $location.path("/doctors");
+  }
+
+  $scope.goProfile = function() {
+      $location.path("/profile");
+  }
+
   $("#doctorview").show();
   var username = authentication.getUser();
   console.log(username)
