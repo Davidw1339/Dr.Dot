@@ -12,4 +12,6 @@ nomatch: Didn't find a match for your symptoms, please contact your primary phys
 
 notcomm: Not a valid command, please try again.
 
-nameStart: The Specialist's profile has been loaded into the web application. Their name is {{ doctor_name|join(" ")}} at {{ address }}. They can be reached at {{ phone|join(" ") }}
+nameStart: A {{specialist}}'s profile has been loaded into the web application. Their name is {{ doctor_name|join(" ")}} at {{ address }}. They can be reached at {{ phone|join(" ") }}
+
+nurseName: We have found {{ doctor_name|join(" ")}} at {{ address }}. They can be reached at {{ phone|join(" ") }} . Their profile has been loaded into the web application.

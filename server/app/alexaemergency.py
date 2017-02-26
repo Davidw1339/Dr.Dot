@@ -75,7 +75,10 @@ def request_doctor(specialist_type):
     doctor_name.append(last_name)
     user.put_doctor("david", nam, address, phone)
     phoneList = [i for i in str(phone)]
-    stateName = render_template( 'nameStart', doctor_name = doctor_name, address = address ,phone = phoneList )
+    if (specialist_type == 'primary-care-nurse-practitioner'):
+        stateName = render_template( 'nurseName',doctor_name = doctor_name, address = address ,phone = phoneList )
+    else:
+        stateName = render_template( 'nameStart',specialist=specialist_type,doctor_name = doctor_name, address = address ,phone = phoneList )
     #statement(stateName)
     if address and phone:
         return stateName
