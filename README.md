@@ -8,17 +8,19 @@ Some features in place currently are:
 
 ## USAGE
   * Prompt Alexa: "Alexa - send help using dr.dot"
+  
            Alexa: "Help is on the way. You can cancel help with: 'cancel help using dr. dot.'"
-  * Prompt Alexa: "Alexa - symptoms with dr.dot"
+  * Prompt Alexa: "Alexa - symptoms with dr.dot" 
+  
            Alexa: "Please state your primary symptoms."
   
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * [PLATFORM 1]
-    * [BUILD EXAMPLE]
-  * [PLATFORM 2]
-    * [BUILD EXAMPLE]
+  * Windows
+    * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
+  * Linux / Other
+    * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
 
-## [INTERFACES] _(if applicable)_ 
+## [INTERFACES]
 We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to query APIs with symptoms or ask for medical assistance.
 In addition, we also use a small web app that gets data from our BetterDoctor queries in order to display the information of the nearest relevant doctor.
 
