@@ -1,9 +1,12 @@
 <div class="container login-view">
   <h1 class="banner">Dr. Dot</h1>
   <div class="alert alert-dismissible alert-danger" id="error" style="display: none;">
-    <strong>Oh snap!</strong> Username/Password was incorrect.
+    <strong>Oh snap!</strong> Something went wrong.
   </div>
   <form class="form-horizontal">
+    <div class="form-group">
+      <input type="text" class="form-control" id="inputName" placeholder="Name"/>
+    </div>
     <div class="form-group">
       <input type="text" class="form-control" id="inputUser" placeholder="Username"/>
     </div>
@@ -11,12 +14,22 @@
       <input type="password" class="form-control" id="inputPassword" placeholder="Password"/>
     </div>
     <div class="form-group">
+      <input type="text" class="form-control" id="inputAddress" placeholder="Address"/>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="inputPhone1" placeholder="Assistant Phone Contact"/>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="inputPhone2" placeholder="Emergency Phone Contact"/>
+    </div>
+    <div class="form-group">
         <div class="col-xs-6">
-            <p style="color: white;">.</p>
+            <p>Already have an account?</p>
             <button type="button" class="btn btn-primary btn-stretch" ng-click="onLogin()">Login</button>
         </div>
         <div class="col-xs-6">
-            <p>Don't have an account?</p>
+            <p style="color: white;">.</p>
+
             <button type="button" class="btn btn-primary btn-stretch" ng-click="onRegister()">Register</button>
         </div>
     </div>

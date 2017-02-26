@@ -17,13 +17,14 @@ db = client.drdot
 
 @app.route("/register_user", methods=['POST'])
 def register_user():
-    user_id = request.form['userid']
-    cursor = db.users.find({'userid': user_id})
+    username = request.form['username']
+    cursor = db.users.find({'username': username})
     if cursor:
         for user in cursor:
             return 'already-registered'
 
     #get credentials
+    password = request.form['password']
     address = request.form['address']
     name = request.form['name']
     assistant_phone = request.form['assistantphone']
@@ -31,7 +32,8 @@ def register_user():
 
     user = db.users.insert_one(
     {
-        "userid": user_id,
+        "username": username,
+        "password": password,
         "address": address,
         "assistantphone": assistant_phone,
         "emergencyphone" : emergency_phone,
@@ -40,6 +42,16 @@ def register_user():
         return "registered"
     else:
         return "register-fail"
+
+@app.route("/login", methods=['GET'])
+def login_user():
+    username = request.args.get('username')
+    password = request.args.get('password')
+    user = db.users.find_one({"username": username, "password": password})
+    if user:
+        return "auth"
+    return "no-auth"
+
 
 @app.route("/get_user", methods=['GET'])
 def get_user():

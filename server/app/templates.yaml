@@ -3,3 +3,11 @@ confirm: Do you need emergency help?
 sent: Help is on the way, you can cancel your request by repeating Alexa, emergency, and answering no.
 
 cancel: Emergency cancelled.
+
+symptomes: Please state your primary symptom.
+
+saved: The Specialist's profile has been loaded into the web application.
+
+nofound: Didn't catch what you said, please restart the process.
+
+nomatch: Didn't find a match for your symptoms, please contact your primary physician.
