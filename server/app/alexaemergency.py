@@ -115,6 +115,9 @@ def send_msg():
 @ask.intent("NoIntent")
 def no_request():
     global emergency
+    if not emergency:
+        nov = render_template('notcomm')
+        return statement(nov)
     canceled_msg = render_template('cancel')
     twilioflask.endEmergencyText('Navid')
     #set database to cancel emergency
