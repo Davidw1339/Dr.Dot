@@ -1,12 +1,14 @@
 {
 	"chest pain" : "Cardiologist",
+	"syncope" : "Cardiologist",
 	"skin pain": "Dermatologist",
 	"tummy hurts": "Gastroenterologist",
 	"stomach ache": "Gastroenterologist",
 	"broken leg": "primary-care-nurse-practitioner",
 	"cold": "primary-care-nurse-practitioner",
 	"flu": "primary-care-nurse-practitioner",
-	"back pain": "primary-care-nurse-practitioner",
+	"back pain": "pediatric-chiropractor",
+	"back disorder": "pediatric-chiropractor",
 	"earache": "Otorhinolaryngology",
 	"nose hurts": "Otorhinolaryngology",
 	"throat pain": "Otorhinolaryngology",
@@ -27,5 +29,9 @@
 	"allergy" : "allergy-immunology-allergy",
 	"depression": "psychiatrist",
 	"depressed": "psychiatrist",
-	"feeling sad": "psychiatrist"
+	"feeling sad": "psychiatrist",
+	"pink eye": "vision-therapy-optometrist",
+	"light hurts eyes": "vision-therapy-optometrist",
+	"loss of love relationship in childhood": "psychiatrist",
+	"hair loss": "dermatologist"
 }
