@@ -32,23 +32,24 @@ def checkFound(res):
 
 #try to find a sympton in a string
 def parseLookup(input):
-	data = json.loads(lookup(input))
-	return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+	ls = input.split(" ")
 
-	# ls = input.split(" ")
+	for i in ls:
+		if(len(i) <= 2):
+	 		ls.remove(i)
+	
+	if(len(ls) >= 6):
+		data = json.loads(lookup(input))
+		return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 
-	# for i in ls:
-	# 	if(len(i) <= 2):
-	# 		ls.remove(i)
+	sets = list(powerset(ls))
 
-	# sets = list(powerset(ls))
-
-	# for i in sets:
-	# 	res = lookup(" ".join(i))
-	# 	if(checkFound(res)):
-	# 		jsonRes = json.loads(res)
-	# 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["CategoryTitle"]
-	# return 0
+	for i in sets:
+	 	res = lookup(" ".join(i))
+	 	if(checkFound(res)):
+	 		jsonRes = json.loads(res)
+	 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+	return 0
 
 # print(parseLookup('I am feeling sad'))
 # print(parseLookup('chest pain'))
