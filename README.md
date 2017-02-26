@@ -18,6 +18,7 @@ Some features in place currently are:
   * General
     * Acquire API keys for IMO, BetterDoctor, Google Maps, and Twilio in order to request data
     * pip install -r requirements.txt
+    * Setup ngrok for local testing
   * Windows
     * ....
   * Linux / Other
@@ -28,9 +29,9 @@ We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to
 In addition, we also use a small web app that gets data from our BetterDoctor queries in order to display the information of the nearest relevant doctor.
 
 ## OTHER SOURCES OF DOCUMENTATION
-https://www.twilio.com/docs/
-https://developer.betterdoctor.com/documentation15#/
-https://developers.google.com/maps/
+   * https://www.twilio.com/docs/
+   * https://developer.betterdoctor.com/documentation15#/
+   * https://developers.google.com/maps/
 
 ## Contributor Guide
 [LINK TO CONTRIBUTING.md]
