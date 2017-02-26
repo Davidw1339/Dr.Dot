@@ -1,31 +1,37 @@
-#Contibuting to [PROJECT]
+#Contibuting to Dr. Dot
 
-## Welcome contributors to the project: 
+## Welcome to the Dr. Dot Developer Community!
+
+For all who wish to contribute, follow the guide linked below from homebrew:
+https://github.com/Homebrew/homebrew-core/blob/master/CONTRIBUTING.md
+We believe this accurately represents how we want contributors to add to the codebase.
 
 ## Short Links to Important Resources:
-* docs: handbook / roadmap (you'll learn more about this in the roadmapping session)
+* Flask-ask documentation https://flask-ask.readthedocs.io/en/latest/
 * bugs: issue tracker / bug report tool
 * communcations: forum link, developer list, IRC/email, Slack, etc.
 ## Testing
 ## Development environment details
 
 ## How to submit changes: Pull Request protocol etc. 
-_What people might expect in a response from the core devs_ 
+refer to guide
 
 ## How to report a bug: 
 * Templates: 
-  * _What to include in a bug report_
+  refer to the above guide
 * First bugs for Contributors
-  * _What would be good bugs to start with?_
+  * Improve doctor finder to find multiple doctors and rank them in terms of reviews
+  * Allow for greater flexibility of inputs
     
 ## New Feature Requirements
-_Any guidelines for proposing the feature_
+refer to the above guide
 
 ## Style Guide / Coding conventions 
 
 ## Code of Conduct
 
 ## Recognition model
-_How will contributors be recognized?_
+refer to the above guide
 
 ## Where can I ask for help?
+Email the core development teams at their personal github emails!
