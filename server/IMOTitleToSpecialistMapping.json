@@ -34,5 +34,7 @@
 	"pink eye": "vision-therapy-optometrist",
 	"light hurts eyes": "vision-therapy-optometrist",
 	"loss of love relationship in childhood": "psychiatrist",
-	"hair loss": "dermatologist"
+	"hair loss": "dermatologist",
+	"gunshot wound": "surgery-trauma-surgery",
+	"gunshot injury": "surgery-trauma-surgery"
 }
