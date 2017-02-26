@@ -25,7 +25,7 @@ Some features in place currently are:
     ngrok http 5000
     
 
-## [INTERFACES]
+## INTERFACES
 We currently use Amazon Alexa through Amazon's Echo Dot as our main interface to query APIs with symptoms or ask for medical assistance.
 In addition, we also use a small web app that gets data from our BetterDoctor queries in order to display the information of the nearest relevant doctor.
 
@@ -35,7 +35,7 @@ In addition, we also use a small web app that gets data from our BetterDoctor qu
    * https://developers.google.com/maps/
 
 ## CONTRIBUTOR GUIDE
-[LINK TO CONTRIBUTING.md]
+[LINK TO CONTRIBUTORS.md](https://github.com/Davidw1339/Dr.Dot/blob/master/CONTRIBUTORS.md)
 
 ## LICENSE
 Dr. Dot uses the GPL 3.0 license.
