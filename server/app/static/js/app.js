@@ -1,31 +1,11 @@
-// 'use strict';   // See note about 'use strict'; below
-//
-// console.log("best test");
-//
-// var myApp = angular.module('myApp', [
-//  'ngRoute',
-// ]);
-//
-// myApp.config(['$routeProvider',
-//      function($routeProvider) {
-//          $routeProvider.
-//              when('/', {
-//                  templateUrl: '/static/partials/login.html',
-//                  controller: 'LoginController'
-//              }).
-//              otherwise({
-//                  redirectTo: '/'
-//              });
-//     }]);
-
-
 'use strict';
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
   'myApp.loginview',
-  'myApp.registerview'
+  'myApp.registerview',
+  'myApp.mainview'
 ]).
 service('authentication', function() {
     this.user = {

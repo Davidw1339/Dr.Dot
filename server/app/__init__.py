@@ -8,3 +8,4 @@ from app import user
 from app import twilioflask
 from app import alexaemergency
 from app import webapp
+from app import db_connection

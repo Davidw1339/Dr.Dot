@@ -7,13 +7,8 @@ import os
 from app import app
 
 #connect to db
-db_url = os.environ.get("MONGODB_URI")
-if db_url == None:
-    secret_reader = open("./secret_key.txt", 'r');
-    db_url = secret_reader.read().strip()
-    # print db_url
-client = MongoClient(db_url)
-db = client.drdot
+import db_connection
+db = db_connection.get_connection()
 
 @app.route("/register_user", methods=['POST'])
 def register_user():

@@ -39,6 +39,7 @@ def symp_request():
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
     if(first == ''):
+        #sadreaxonly
         nof = render_template(nofound)
         return statement(nof)
     mainStr = parseLookup(first)
@@ -48,5 +49,3 @@ def symp_list(first):
     #insert code to find and get specialist here
     sv = render_template(saved)
     return statement(sv)
-
-
