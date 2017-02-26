@@ -9,12 +9,12 @@ We believe this accurately represents how we want contributors to add to the cod
 ## Short Links to Important Resources:
 * Flask-ask documentation https://flask-ask.readthedocs.io/en/latest/
 * bugs: issue tracker / bug report tool
-* communcations: forum link, developer list, IRC/email, Slack, etc.
+* communcations: email
 ## Testing
 ## Development environment details
 
 ## How to submit changes: Pull Request protocol etc. 
-refer to guide
+refer to above guide
 
 ## How to report a bug: 
 * Templates: 
