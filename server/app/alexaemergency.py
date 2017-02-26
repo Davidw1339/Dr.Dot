@@ -11,10 +11,9 @@ import user
 
 db = db_connection.get_connection()
 phone_num = "+14084258777"
-lpcount = 0
-mainStr = ''
 #setup flask app
 ask = Ask(app, "/")
+vac = false
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
 with open('IMOTitleToSpecialistMapping.json') as f:
@@ -113,12 +112,17 @@ def no_request():
 
 @ask.intent("SympIntent")
 def symp_request():
+    vac = true
     symp_msg = render_template('symptomes')
     return question(symp_msg)
 
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
-    #print "THIS IS HAPPENING" , first
+    print "THIS IS HAPPENING" , first
+    if(!vac):
+        nov = render_template('notcomm')
+        return statement(nov)
+    vac = false
     if(first == ''):
         nof = render_template('nofound')
         return statement(nof)

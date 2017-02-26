@@ -11,3 +11,5 @@ saved: The Specialist's profile has been loaded into the web application.
 nofound: Didn't catch what you said, please restart the process.
 
 nomatch: Didn't find a match for your symptoms, please contact your primary physician.
+
+notcomm: Not a valid command, please try again.
