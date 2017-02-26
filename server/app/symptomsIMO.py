@@ -1,6 +1,7 @@
 import requests
 import json
 import imoKeys
+import alexaemergency as emer
 from itertools import *
 
 
@@ -37,11 +38,7 @@ def parseLookup(input):
 	 		ls.remove(i)
 	
 	if(len(ls) >= 6):
-		lu = lookup(input)
-		data = json.loads(lu)
-		if(checkFound(data) == 0):
-			return 0
-		return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+		ls=ls[0:5] #Do powerset with first six words
 
 	sets = list(powerset(ls))
 
@@ -49,7 +46,10 @@ def parseLookup(input):
 	 	res = lookup(" ".join(i))
 	 	jsonRes = json.loads(res)
 		if(checkFound(jsonRes)):
-	 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+			val = jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+			val = val.lower()
+			if(val in emer.symptom_specialist_mapping):
+	 			return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 	return 0
 
 # print(parseLookup('I am feeling sad'))
