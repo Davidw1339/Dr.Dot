@@ -13,7 +13,7 @@ db = db_connection.get_connection()
 phone_num = "+14084258777"
 #setup flask app
 ask = Ask(app, "/")
-vac = false
+vac = False
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
 with open('IMOTitleToSpecialistMapping.json') as f:
@@ -23,13 +23,13 @@ def request_doctor(specialist_type):
     specialist_type = specialist_type.lower()
 
     sess = requests.Session()
-    
+
     url = 'https://api.betterdoctor.com/2016-03-01/doctors?'
-    location = 'location=40.120%2C-88.272%2C100' # hard coded to Champaign IL... TODO: use server 
+    location = 'location=40.120%2C-88.272%2C100' # hard coded to Champaign IL... TODO: use server
     user_location = 'user_location=40.120%2C-88.272'
     skip = 'skip=0'
     limit = 'limit=10'
-    
+
     specialty_uid = 'specialty_uid=' + specialist_type
     #nsurance_uid = 'insurance_uid=medicaid-medicaid'
 
@@ -112,17 +112,17 @@ def no_request():
 
 @ask.intent("SympIntent")
 def symp_request():
-    vac = true
+    vac = True
     symp_msg = render_template('symptomes')
     return question(symp_msg)
 
 @ask.intent("AnswerIntent",convert={'first': str})
 def symp_list(first):
     print "THIS IS HAPPENING" , first
-    if(!vac):
+    if(~vac):
         nov = render_template('notcomm')
         return statement(nov)
-    vac = false
+    vac = False
     if(first == ''):
         nof = render_template('nofound')
         return statement(nof)
