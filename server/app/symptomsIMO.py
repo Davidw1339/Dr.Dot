@@ -1,5 +1,6 @@
 import requests
 import json
+import imoKeys
 from itertools import *
 
 
@@ -13,9 +14,7 @@ def lookup(symptRaw):
 	sympt = json.dumps({"Problems": [{"FreeText":symptRaw}]})
 	
 	headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
-	auth = ('29740865e46a477fbccbac990a808944',
-	 '13E8A349D7DF0CC2318C7E5F9B576879BB017BDA88DE016B220C4D60A8797A6B')
-	 
+	auth = imoKeys.auth
 	r = requests.post("https://ipl-nonproduction-customer_validation.e-imo.com/api/v3/actions/categorize",
 	auth = auth,
 	headers = headers,
