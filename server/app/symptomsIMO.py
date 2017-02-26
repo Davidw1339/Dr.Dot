@@ -33,9 +33,14 @@ def checkFound(jsonRes):
 def parseLookup(input):
 	ls = input.split(" ")
 
+	newLs = []
 	for i in ls:
-		if(len(i) <= 2 or '\'' in i):
-	 		ls.remove(i)
+		if not (len(i) <= 2 or '\'' in i):
+	 		newLs.append(i)
+
+	newLs.append("am")
+	
+	ls = newLs
 	
 	if(len(ls) >= 6):
 		ls=ls[0:5] #Do powerset with first six words
@@ -49,7 +54,7 @@ def parseLookup(input):
 			val = jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 			val = val.lower()
 			if(val in emer.symptom_specialist_mapping):
-	 			return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
+				return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 	return 0
 
 # print(parseLookup('I am feeling sad'))
