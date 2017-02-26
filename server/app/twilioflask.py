@@ -1,6 +1,7 @@
 from twilio.rest import TwilioRestClient
 from twilio import TwilioRestException
-import json
+import twilio.twiml
+import json, time, alexaemergency
 
 #Connect to twilio with Alex's keys
 
@@ -16,3 +17,16 @@ def message_phone(contact,message):
         print "we sent the txt boy"
     except TwilioRestException as e:
         print(e)
+
+@app.route("/", methods=['GET', 'POST'])
+def sendEmergencyText(user):
+    global emergency
+    i = 0
+    message_phone("+17737108632","You are an emergency contact for "+ user +", please call 911.")
+    resp = twilio.twiml.Response()
+    while i < TIME_LIMIT:
+        if len(str(resp)) != 50:
+            return str(resp)
+        time.sleep(1)
+        i+=1
+    message_phone("+14084258777", "You are an emergency contact for David, please call 911.")
