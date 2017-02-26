@@ -33,7 +33,7 @@ def parseLookup(input):
 	ls = input.split(" ")
 
 	for i in ls:
-		if(len(i) <= 2):
+		if(len(i) <= 2 or '\'' in i):
 	 		ls.remove(i)
 	
 	if(len(ls) >= 6):
