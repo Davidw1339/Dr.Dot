@@ -23,9 +23,7 @@ def lookup(symptRaw):
 	return r.text
 
 #checks if IMO returned a categorized symptom
-def checkFound(res):
-		jsonRes = json.loads(res)
-
+def checkFound(jsonRes):
 		if(jsonRes["Categories"][0]["Name"] == "Uncategorized"):
 			return 0
 		return 1
@@ -39,15 +37,18 @@ def parseLookup(input):
 	 		ls.remove(i)
 	
 	if(len(ls) >= 6):
-		data = json.loads(lookup(input))
+		lu = lookup(input)
+		data = json.loads(lu)
+		if(checkFound(data) == 0):
+			return 0
 		return data["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 
 	sets = list(powerset(ls))
 
 	for i in sets:
 	 	res = lookup(" ".join(i))
-	 	if(checkFound(res)):
-	 		jsonRes = json.loads(res)
+	 	jsonRes = json.loads(res)
+		if(checkFound(jsonRes)):
 	 		return jsonRes["Categories"][0]["Problems"][0]["Details"]["IMOTitle"]
 	return 0
 
